@@ -1,0 +1,33 @@
+package in.codegram.employeeManagement.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.codegram.employeeManagement.domain.Employee;
+import in.codegram.employeeManagement.exception.EmployeeEmailException;
+import in.codegram.employeeManagement.repository.EmployeeRepository;
+import in.codegram.employeeManagement.service.EmployeeService;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService 
+{
+
+	@Autowired
+	private EmployeeRepository employeeRepository;
+	
+	@Override
+	public Employee saveOrUpdate(Employee employee) {
+		// TODO Auto-generated method stub
+		try 
+		{
+			employee.setEmail_id(employee.getEmail_id().toLowerCase());
+			return employeeRepository.save(employee);
+		}
+		
+		catch(Exception ex)
+		{
+			throw new EmployeeEmailException("EmployeeEmail: "+employee.getEmail_id().toLowerCase()+" "+"already exists");
+		}
+		
+	}
+}

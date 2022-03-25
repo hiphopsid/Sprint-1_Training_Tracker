@@ -1,0 +1,5 @@
+package in.codegram.employeeManagement.exception;
+
+public class EmployeeEmailExceptionResponse {
+
+}
