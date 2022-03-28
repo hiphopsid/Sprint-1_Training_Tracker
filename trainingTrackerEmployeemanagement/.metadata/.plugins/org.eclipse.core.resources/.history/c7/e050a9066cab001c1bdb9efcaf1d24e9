@@ -1,5 +1,0 @@
-package in.codegram.employeeManagement.exception;
-
-public class EmployeeEmailException extends RuntimeException {
-
-}
