@@ -1,0 +1,8 @@
+package in.trainingtracker.trainingregistrationmanagement.service;
+
+import in.trainingtracker.trainingregistrationmanagement.domain.TrainingRegistrationManagement;
+
+public interface TrainingRegistrationManagementService {
+	public TrainingRegistrationManagement saveorupdate(TrainingRegistrationManagement TRMService);
+	
+}
