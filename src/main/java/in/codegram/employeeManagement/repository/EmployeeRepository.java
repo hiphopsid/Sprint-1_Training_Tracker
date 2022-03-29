@@ -12,4 +12,6 @@ public interface EmployeeRepository extends CrudRepository<Employee, Long>
 	//TODO: no need to implement any CRUD operation over here, if any customization is required we can customize the CRUD method
 	
 	Employee findByEmailId(String emailId);
+	
+	
 }

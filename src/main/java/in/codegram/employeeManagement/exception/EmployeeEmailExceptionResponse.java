@@ -2,19 +2,19 @@ package in.codegram.employeeManagement.exception;
 
 public class EmployeeEmailExceptionResponse {
 
-	private String email_id;
+	private String emailId;
 	
-	public EmployeeEmailExceptionResponse(String email_id) {
+	public EmployeeEmailExceptionResponse(String emailId) {
 		super();
-		this.email_id = email_id;
+		this.emailId = emailId;
 	}
 
-	public String getEmail_id() {
-		return email_id;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 	
 	

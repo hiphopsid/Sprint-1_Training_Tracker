@@ -20,13 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService
 		// TODO Auto-generated method stub
 		try 
 		{
-			employee.setEmailId(employee.getEmailId().toLowerCase());
 			return employeeRepository.save(employee);
 		}
 		
 		catch(Exception ex)
 		{
-			throw new EmployeeEmailException("EmployeeEmail: "+employee.getEmailId().toLowerCase()+" "+"already exists");
+			throw new EmployeeEmailException("Employee with:"+ employee.getEmailId()+" "+"already exist");
 		}
 		
 	}
@@ -37,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService
 		Employee employee=employeeRepository.findByEmailId(emailId);
 		if(employee==null)
 		{
-			throw new EmployeeEmailException("Employee Email: "+ employee.getEmailId().toLowerCase()+" "+"does not exist");
+			throw new EmployeeEmailException("Employee does not exist");
 		}
 		return employee;
 	}
@@ -50,14 +49,14 @@ public class EmployeeServiceImpl implements EmployeeService
 	}
 
 	@Override
-	public void deletProjectByEmployeeEmail(String emailId) 
+	public void deleteProjectByEmployeeEmail(String emailId) 
 	{
 		
 		Employee employee=employeeRepository.findByEmailId(emailId.toLowerCase());
 		
 		if(employee==null)
 		{
-			throw new EmployeeEmailException("Employee Email: "+ employee.getEmailId().toLowerCase()+" "+"does not exist");
+			throw new EmployeeEmailException("employee doesn't exist");
 		}
 		
 		employeeRepository.delete(employee);

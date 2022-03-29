@@ -7,5 +7,5 @@ public interface EmployeeService
 	public Employee saveOrUpdate(Employee employee);
 	public Employee findEmployeeByEmployeeId(String emailId);
 	public Iterable<Employee> findAllEmployees();
-	public void deletProjectByEmployeeEmail(String emailId);
+	public void deleteProjectByEmployeeEmail(String emailId);
 }

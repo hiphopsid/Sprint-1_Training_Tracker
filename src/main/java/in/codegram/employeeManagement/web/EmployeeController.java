@@ -58,7 +58,7 @@ public class EmployeeController
 	@DeleteMapping("/{emailId}")
 	public ResponseEntity<?> deleteEmployee(@PathVariable String emailId)
 	{
-		employeeService.deletProjectByEmployeeEmail(emailId);
+		employeeService.deleteProjectByEmployeeEmail(emailId);
 		return new ResponseEntity<String>("Employee with email: "+emailId.toUpperCase()+" "+"is deleted successfully!" , HttpStatus.OK) ;
 	}
 }
